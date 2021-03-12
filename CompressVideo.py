@@ -99,6 +99,7 @@ def compress():
     i=0
     i = filename.find(".")
     nameNoExt = filename[:i]
+    btnCompress.setStyleSheet("background-color: green")
 
     # rename file, with "_ORIGINAL" appended
     newname = filename
@@ -263,6 +264,8 @@ lblCRF.setText("24")
 btnCompress = QPushButton(MainWindow)
 btnCompress.setGeometry(670, 470, 161, 101)
 btnCompress.setText("Compress")
+btnCompress.setFont(bold_75_20)
+btnCompress.setStyleSheet("background-color: red")
 btnCompress.clicked.connect(compress)
 
 # Usage Label
