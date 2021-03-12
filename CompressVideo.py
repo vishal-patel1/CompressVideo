@@ -1,7 +1,7 @@
 import os, sys, subprocess, datetime
 from PyQt5 import QtGui
 from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QFont
+from PyQt5.QtGui import QFont, QPalette
 from PyQt5.QtWidgets import QApplication, QGroupBox, QLineEdit, QMainWindow, QRadioButton, QSlider, QStatusBar, QTextBrowser, QLabel, QPushButton, QFileDialog, QMessageBox
 
 fps = 30
@@ -99,6 +99,7 @@ def compress():
     i=0
     i = filename.find(".")
     nameNoExt = filename[:i]
+    btnCompress.setStyleSheet("background-color: green")
 
     # rename file, with "_ORIGINAL" appended
     newname = filename
@@ -263,6 +264,8 @@ lblCRF.setText("24")
 btnCompress = QPushButton(MainWindow)
 btnCompress.setGeometry(670, 470, 161, 101)
 btnCompress.setText("Compress")
+btnCompress.setFont(bold_75_20)
+btnCompress.setStyleSheet("background-color: red")
 btnCompress.clicked.connect(compress)
 
 # Usage Label
